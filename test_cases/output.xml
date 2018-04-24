@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180424 18:58:09.361" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/ekaterina/robotfw/nx/tests/test_cases/account.robot" id="s1" name="Account">
+<kw type="setup" name="Log in to system" library="resource">
+<kw name="Open browser to main page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${base url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:09.431" level="INFO">Opening browser 'Chrome' to base url 'https://beta.nxvms.com'.</msg>
+<status status="PASS" endtime="20180424 18:58:14.424" starttime="20180424 18:58:09.431"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180424 18:58:14.528" starttime="20180424 18:58:14.424"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:14.530" starttime="20180424 18:58:14.528"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${logo}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:14.844" starttime="20180424 18:58:14.530"></status>
+</kw>
+<kw name="Main page should be open" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>class:cloud-icon</arg>
+</arguments>
+<msg timestamp="20180424 18:58:14.873" level="INFO">Current page contains element 'class:cloud-icon'.</msg>
+<status status="PASS" endtime="20180424 18:58:14.874" starttime="20180424 18:58:14.845"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:14.874" starttime="20180424 18:58:14.844"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:14.874" starttime="20180424 18:58:09.431"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>default:/login</arg>
+</arguments>
+<msg timestamp="20180424 18:58:14.874" level="INFO">Clicking link 'default:/login'.</msg>
+<status status="PASS" endtime="20180424 18:58:14.999" starttime="20180424 18:58:14.874"></status>
+</kw>
+<kw name="Fill Login form" library="resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${login button}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:15.223" starttime="20180424 18:58:14.999"></status>
+</kw>
+<kw name="Enter email" library="resource">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type=email]</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:15.224" level="INFO">Typing text 'noptixqa+admin@gmail.com' into text field 'css:input[type=email]'.</msg>
+<status status="PASS" endtime="20180424 18:58:15.458" starttime="20180424 18:58:15.224"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:15.458" starttime="20180424 18:58:15.223"></status>
+</kw>
+<kw name="Enter password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type=password]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:15.459" level="INFO">Typing text 'qweasd123' into text field 'css:input[type=password]'.</msg>
+<status status="PASS" endtime="20180424 18:58:15.578" starttime="20180424 18:58:15.459"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:15.578" starttime="20180424 18:58:15.458"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${login button}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:15.578" level="INFO">Clicking button 'xpath: //process-button[@process="login"]//button'.</msg>
+<status status="PASS" endtime="20180424 18:58:15.672" starttime="20180424 18:58:15.578"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:15.672" starttime="20180424 18:58:14.999"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` disappears from current page.</doc>
+<arguments>
+<arg>css:input[type=email]</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:16.902" starttime="20180424 18:58:15.672"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:16.902" starttime="20180424 18:58:09.431"></status>
+</kw>
+<test id="s1-t1" name="Change language to ru_RU">
+<kw name="Given user is on account page">
+<kw name="Open account page" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${account url}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:16.903" level="INFO">Opening url 'https://beta.nxvms.com/account'</msg>
+<status status="PASS" endtime="20180424 18:58:17.495" starttime="20180424 18:58:16.903"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:17.495" starttime="20180424 18:58:16.903"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:17.496" starttime="20180424 18:58:16.903"></status>
+</kw>
+<kw name="When user selects language &quot;ru_RU&quot;">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:17.722" starttime="20180424 18:58:17.496"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:17.722" level="INFO">Clicking element 'xpath: //form[@name="accountForm"]//language-select'.</msg>
+<status status="PASS" endtime="20180424 18:58:17.794" starttime="20180424 18:58:17.722"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //span[@lang="${language code}"]</arg>
+</arguments>
+<msg timestamp="20180424 18:58:17.795" level="INFO">Clicking element 'xpath: //span[@lang="ru_RU"]'.</msg>
+<status status="PASS" endtime="20180424 18:58:17.873" starttime="20180424 18:58:17.794"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:17.874" starttime="20180424 18:58:17.496"></status>
+</kw>
+<kw name="And user clicks Save">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${save button}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:17.874" level="INFO">Clicking button 'xpath: //process-button[@process="save"]//button'.</msg>
+<status status="PASS" endtime="20180424 18:58:17.963" starttime="20180424 18:58:17.874"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:17.964" starttime="20180424 18:58:17.874"></status>
+</kw>
+<kw name="Then inteface is in selected language">
+<arguments>
+<arg>Учетная запись</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${save button}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:17.978" starttime="20180424 18:58:17.965"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${language check text}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:17.999" level="INFO">Current page contains text 'Учетная запись'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.000" starttime="20180424 18:58:17.979"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.001" starttime="20180424 18:58:17.965"></status>
+</kw>
+<kw name="And selected language is displayed in language field">
+<arguments>
+<arg>Русский</arg>
+</arguments>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+<arg>${language name}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.034" level="INFO">Element 'xpath: //form[@name="accountForm"]//language-select' contains text 'Русский'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.034" starttime="20180424 18:58:18.003"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.034" starttime="20180424 18:58:18.002"></status>
+</kw>
+<kw type="teardown" name="Change language to" library="resource">
+<arguments>
+<arg>en_US</arg>
+<arg>English (US)</arg>
+</arguments>
+<kw name="User is on account page">
+<kw name="Open account page" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${account url}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.037" level="INFO">Opening url 'https://beta.nxvms.com/account'</msg>
+<status status="PASS" endtime="20180424 18:58:18.588" starttime="20180424 18:58:18.037"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.588" starttime="20180424 18:58:18.036"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.588" starttime="20180424 18:58:18.035"></status>
+</kw>
+<kw name="user selects language &quot;${language code}&quot;">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:18.601" starttime="20180424 18:58:18.589"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.602" level="INFO">Clicking element 'xpath: //form[@name="accountForm"]//language-select'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.662" starttime="20180424 18:58:18.602"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //span[@lang="${language code}"]</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.663" level="INFO">Clicking element 'xpath: //span[@lang="en_US"]'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.743" starttime="20180424 18:58:18.662"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.743" starttime="20180424 18:58:18.588"></status>
+</kw>
+<kw name="User clicks Save">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${save button}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.744" level="INFO">Clicking button 'xpath: //process-button[@process="save"]//button'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.828" starttime="20180424 18:58:18.744"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.828" starttime="20180424 18:58:18.744"></status>
+</kw>
+<kw name="Selected language is displayed in language field">
+<arguments>
+<arg>${language name}</arg>
+</arguments>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${language dropdown}</arg>
+<arg>${language name}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.858" level="INFO">Element 'xpath: //form[@name="accountForm"]//language-select' contains text 'English (US)'.</msg>
+<status status="PASS" endtime="20180424 18:58:18.859" starttime="20180424 18:58:18.828"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.859" starttime="20180424 18:58:18.828"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.859" starttime="20180424 18:58:18.035"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:18.859" critical="yes" starttime="20180424 18:58:16.902"></status>
+</test>
+<test id="s1-t2" name="Email field is not editible">
+<kw name="Open account page" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${account url}</arg>
+</arguments>
+<msg timestamp="20180424 18:58:18.861" level="INFO">Opening url 'https://beta.nxvms.com/account'</msg>
+<status status="PASS" endtime="20180424 18:58:19.399" starttime="20180424 18:58:18.861"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:19.399" starttime="20180424 18:58:18.860"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${email field}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:19.419" starttime="20180424 18:58:19.400"></status>
+</kw>
+<kw name="Email field should not be editible">
+<kw name="Element Should Be Readonly" library="mylib">
+<doc>Verifies that input field is not editable, because it has a</doc>
+<arguments>
+<arg>${email field}</arg>
+</arguments>
+<status status="PASS" endtime="20180424 18:58:19.432" starttime="20180424 18:58:19.419"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:19.432" starttime="20180424 18:58:19.419"></status>
+</kw>
+<status status="PASS" endtime="20180424 18:58:19.432" critical="yes" starttime="20180424 18:58:18.860"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180424 18:58:19.489" starttime="20180424 18:58:19.433"></status>
+</kw>
+<doc>These are example Gherkin style test cases for
+user account page</doc>
+<status status="PASS" endtime="20180424 18:58:19.489" starttime="20180424 18:58:09.362"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Account" pass="2">Account</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
