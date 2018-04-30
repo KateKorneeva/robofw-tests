@@ -22,6 +22,8 @@ ${save button}          xpath: //process-button[@process="save"]//button
 ${login form}           css:form[name="loginForm"]
 ${login link}           default:/login
 ${login button}         xpath: //process-button[@process="login"]//button
+${first-name field}     id:firstName
+${last-name field}      id:lastName
 
 *** Keywords ***
 Log in to system
