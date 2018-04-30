@@ -28,8 +28,8 @@ Change first name
     Given user is on account page
     When user edits first-name field
         And user clicks Save
-    Then new name is displayed in first-name field
-        And new name is displayed on system page
+    Then new first name is displayed in first-name field
+        And new first name is displayed on system page
 
 #	Scenario outline: Change first or last name
 #		Given user is on account page
@@ -79,10 +79,11 @@ Selected language is displayed in language field
     [Arguments]    ${language name}
     Element should contain    ${language dropdown}    ${language name}
 
-User edits ${field} field
+User edits first-name field
+    Input text    ${first-name field}    ${new first name}
+
+New first name is displayed in first-name field
     pass execution
 
-New ${text} is displayed in ${field} field
+New first name is displayed on system page
     pass execution
-
-New ${text} is displayed on system page

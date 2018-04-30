@@ -13,6 +13,10 @@ ${delay}                0
 ${email}                noptixqa+admin@gmail.com
 ${new email}            noptixqa+admin-new@gmail.com
 ${password}             qweasd123
+${fist name}            Mark
+${last name}            Hamil
+${new first name}       Harrison
+${new last name}        Ford
 
 # Element locators
 ${logo}                 class:lead
