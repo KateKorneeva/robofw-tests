@@ -69,7 +69,7 @@ Open browser to account page
 Change language to
     [Arguments]    ${language code}    ${language name}
     User is on account page
-    User selects language "${language code}"
+    User selects language ${language code}
     User clicks Save
     Selected language is displayed in language field    ${language name}
 
@@ -83,3 +83,32 @@ Log in again if logout has happen occasionaly
     ${present}  Run keyword and return status    Page should contain     Log in to Nx Cloud
     Run keyword if    ${present}    Fill login form
 
+User selects language ${language code}
+    Wait until page contains element    ${language dropdown}
+    Click Element    ${language dropdown}
+    Click Element    xpath: //a/span[@lang="${language code}"]
+
+User is on account page
+    Open account page
+
+User clicks Save
+    Click Button    ${save button}
+
+Inteface is in selected language
+    [Arguments]    ${language check text}
+    Sleep   0.5s   # Need to check button existence after page is reloaded
+    Wait until page contains element    ${save button}
+    Page should contain    ${language check text}
+
+Selected language is displayed in language field
+    [Arguments]    ${language name}
+    Element should contain    ${language dropdown}    ${language name}
+
+User edits first-name field
+    Input text    ${first-name field}    ${new first name}
+
+New first name is displayed in first-name field
+    pass execution
+
+New first name is displayed on system page
+    pass execution

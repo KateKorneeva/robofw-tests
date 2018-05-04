@@ -11,7 +11,7 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 Change language to ru_RU
     Given user is on account page
-    When user selects language "ru_RU"
+    When user selects language ru_RU
         And user clicks Save
     Then inteface is in selected language    Учетная запись
         And selected language is displayed in language field    Русский
@@ -24,12 +24,12 @@ Email field is not editible
     Wait until page contains element    ${email field}
     Email field should not be editible
 
-Change first name
-    Given user is on account page
-    When user edits first-name field
-        And user clicks Save
-    Then new first name is displayed in first-name field
-        And new first name is displayed on system page
+#Change first name
+#    Given user is on account page
+#    When user edits first-name field
+#        And user clicks Save
+#    Then new first name is displayed in first-name field
+#        And new first name is displayed on system page
 
 #	Scenario outline: Change first or last name
 #		Given user is on account page
@@ -56,34 +56,6 @@ Change first name
 
 
 *** Keywords ***
-User is on account page
-    Open account page
 
 Email field should not be editible
     Element should be readonly    ${email field}
-
-User selects language "${language code}"
-    Wait until page contains element    ${language dropdown}
-    Click Element    ${language dropdown}
-    Click Element    xpath: //span[@lang="${language code}"]
-
-User clicks Save
-    Click Button    ${save button}
-
-Inteface is in selected language
-    [Arguments]    ${language check text}
-    Wait until page contains element    ${save button}
-    Page should contain    ${language check text}
-
-Selected language is displayed in language field
-    [Arguments]    ${language name}
-    Element should contain    ${language dropdown}    ${language name}
-
-User edits first-name field
-    Input text    ${first-name field}    ${new first name}
-
-New first name is displayed in first-name field
-    pass execution
-
-New first name is displayed on system page
-    pass execution
